@@ -3,15 +3,60 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>Marfeel Frontend Test</title>
+    <link rel="stylesheet" href="/styles/main.css">
 </head>
 <body>
-    <main>
-        <section>
+    <main id="container">
+        <section id="form-container">
             <form action="" method="get" id="form">
                 <input id="search" type="text" placeholder="Search Username..." required>
                 <button type="submit">Search</button>
             </form>
         </section>
+
+        <section id="results">
+
+            <header id="user-data">
+
+                <figure id="picture">
+                    
+                </figure>
+
+                <div>
+                    <h5>
+                        username
+                    </h5>
+
+                    <h2>
+                        FullName
+                    </h2>
+
+                    <p>
+                        description
+                    </p>
+
+                </div>
+
+            </header>
+
+            <div id="repos">
+                <h3>
+                    Repositories
+                </h3>
+
+                <ul>
+                    <li>Repo1</li>
+                    <li>Repo2</li>
+                </ul>
+
+            </div>
+            
+        </section>
+
+            <div id="no-results">
+                <h2> User does not exist</h2> 
+            </div>
+
     </main>
 
     <script src="./api/gitHubApi.js"></script>

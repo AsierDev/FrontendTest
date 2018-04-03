@@ -1,0 +1,54 @@
+{
+	"info": {
+		"_postman_id": "dde3748d-34a6-4180-ade0-c9b4400b159f",
+		"name": "Mafeel",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "SEARCH for user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "https://api.github.com/users/asierdev",
+					"protocol": "https",
+					"host": [
+						"api",
+						"github",
+						"com"
+					],
+					"path": [
+						"users",
+						"asierdev"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RETRIEVE repos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "https://api.github.com/users/AsierDev/repos",
+					"protocol": "https",
+					"host": [
+						"api",
+						"github",
+						"com"
+					],
+					"path": [
+						"users",
+						"AsierDev",
+						"repos"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
