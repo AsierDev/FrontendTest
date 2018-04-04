@@ -13,20 +13,16 @@
     margin-left: auto;
     margin-right: auto;
     width: 60%;
-    background: gray;
     border-radius: 15px;
-    padding: 2rem
+    box-shadow: inset 0 0 1px ;
+    padding: 2rem;
+
 }
 
 
 /* FORM */
 
-/* #form-container {
-    display: flex;
-} */
-
 #form {
-    background: red;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -61,10 +57,19 @@
 #picture img{
     height: 100px;
     width: 100px;
-    background: blue;
     
 }
 
 
+/* REPOS */
+
+.repos {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#icons {
+    margin-left: auto
+}
 
 

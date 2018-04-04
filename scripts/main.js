@@ -3,9 +3,14 @@
 
     //stars: stargazers_count
     //forks: forks_count
+    //url repos: html_url
+    // name repos: name
     //document.getElementById("no-results").style.display = "flex";
 
-    //document.getElementById("picture").innerHTML(`<img src=${userData.avatar_url} alt="avatar">`)
+
+    const picture = document.getElementById("picture")
+    const infoUser = document.getElementById("info-user")
+    const reposList = document.getElementById("repos-list")
 
 
     console.log("hola mundo")
@@ -15,32 +20,52 @@
     function findUser(e) {
         e.preventDefault();
 
+        infoUser.innerHTML = '';
+        reposList.innerHTML = '';
+
+
         const user = document.getElementById('search').value;
 
         gitHubApi.searchUser(user)
-            .then(res => res.ok ? res.json() : showError())
             .then(data => retrieveUser(data))
+            .catch(err => console.error("error -->", err))
 
+        gitHubApi.showRepos(user)
+            .then(data => retrieveRepos(data))
+            .catch(err => console.error("error -->", err))    
 
-        /*  gitHubApi.showRepos('asierdev', 'repos')
-        .then(res => res.json())
-        .then(data => console.log(data))    */
 
     }
 
     function retrieveUser(data) {
         console.log(data)
-        document.getElementById("picture").innerHTML = `<img src=${data.avatar_url} alt="avatar">`
 
-        data.login ? document.getElementById("username").innerHTML = data.login : document.getElementById("username").innerHTML = 'No username defined'
+        picture.innerHTML = `<img src=${data.avatar_url} alt="avatar">` 
 
-        data.name ? document.getElementById("fullname").innerHTML = data.name : document.getElementById("fullname").innerHTML = 'No name defined'
+        infoUser.innerHTML += `<h5 id="username">@${data.login}</h5>` 
 
-        data.bio ? document.getElementById("bio").innerHTML = data.bio : document.getElementById("bio").innerHTML = 'No bio defined'
+        infoUser.innerHTML += `<h1 id="fullname">${data.name}</h1>` 
+
+        infoUser.innerHTML += data.bio ? `<p id="bio">${data.bio}</p>` : '<p id="bio"> No bio defined </p>'
+        
     }
 
-    function showError() {
-        console.log("show error")
+    function retrieveRepos(data) {
+        console.log(data)
+        data.map(repo => {
+            return reposList.innerHTML += 
+            `<li class="repos">
+                <h3>
+                    <a href=${repo.html_url} target="_blank" rel="noopener noreferrer">${repo.name}</a>
+                </h3>
+                 <div id="icons">
+                    <img src="./images/stars.svg">${repo.stargazers_count}
+                    <img src="./images/forks.svg">${repo.forks_count}
+                </div>
+            </li>
+            <hr>`
+        })
+
     }
 
 
