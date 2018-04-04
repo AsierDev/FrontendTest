@@ -1,0 +1,6 @@
+const picture = document.getElementById('picture')
+const infoUser = document.getElementById('info-user')
+const reposList = document.getElementById('repos-list')
+const results = document.getElementById('results')
+const noResults = document.getElementById('no-results')
+const reposView = document.getElementById('repos-view')

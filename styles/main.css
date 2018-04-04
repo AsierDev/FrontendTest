@@ -1,13 +1,5 @@
 
- #no-results {
-    display: none
-}
-
- #results {
-    display: none
-}  
-
-/* GLOBAL */
+/* /////////////// GENERAL /////////////// */
 
 html, body {
     margin: 0;
@@ -20,7 +12,7 @@ a {
 }
 
 
-/* CONTAINER */
+/* ///////////////  MAIN CONTAINER /////////////// */
 
 #container {
     margin: 3rem auto;
@@ -32,7 +24,7 @@ a {
 }
 
 
-/* FORM */
+/* ///////////////  FORM /////////////// */
 
 #form {
     display: flex;
@@ -64,8 +56,14 @@ a {
    
 }
 
+/* ///////////////  RESULTS SECTION /////////////// */
 
-/* USER INFO */
+ #results {
+    display: none
+}  
+
+
+/* ///////////////  HEADER WITH USER INFO /////////////// */
 
 #user-data {
     display: inline-flex;
@@ -95,7 +93,7 @@ a {
 }
 
 
-/* REPOS */
+/* ///////////////  LIST OF REPOS /////////////// */
 
 .repos {
     display: flex;
@@ -112,9 +110,11 @@ a {
     border: solid 2px rgb(37, 36, 36);
 }
 
-/* ERROR MESSAGE */
+
+/* ///////////////  ERROR MESSAGE /////////////// */
 
 #no-results {
+    display: none;
     background: rgb(250, 193, 187);
     border: solid 1px rgb(117, 54, 47);
     border-radius: 3px
@@ -124,6 +124,8 @@ a {
     color: rgb(117, 54, 47);
     padding-left: 2rem
 }
+
+
 
 
 
