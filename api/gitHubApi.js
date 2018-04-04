@@ -24,9 +24,9 @@ const gitHubApi = {
                 .then(data => resolve(data))
                 .catch(err => reject(err))            
         })
-            .catch(err => {
+             .catch(err => {
                 throw new Error(err)
-            })
+            }) 
     },
 
     searchUser: function (user) {
