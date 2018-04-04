@@ -1,9 +1,8 @@
-
 const gitHubApi = {
 
     baseUrl: 'https://api.github.com/users/',
 
-    call: function (_PATH) {
+    call (_PATH) {
         return new Promise((resolve, reject) => {
 
             fetch(_PATH)
@@ -16,13 +15,13 @@ const gitHubApi = {
             }) 
     },
 
-    searchUser: function (user) {
+    searchUser (user) {
         const path = `${this.baseUrl}${user}`
 
         return this.call(path)
     },
 
-    showRepos: function (user) {
+    showRepos (user) {
         const path = `${this.baseUrl}${user}/repos`
 
         return this.call(path)
